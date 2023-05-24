@@ -11,8 +11,13 @@ on:
 
 jobs:
   remove-untagged-container-images:
-    uses: camargo/delete-untagged-action@v1
-    with:
-      github-token: ${{ secrets.CR_PAT }}
-      package-name: untagged-image-test
-      personal-account: true
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - Remove untagged container images
+        uses: camargo/delete-untagged-action@v1
+        with:
+          github-token: ${{ secrets.CR_PAT }}
+          package-name: untagged-image-test
+          personal-account: true
