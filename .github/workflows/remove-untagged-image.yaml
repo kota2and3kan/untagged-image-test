@@ -15,7 +15,7 @@ jobs:
 
     steps:
 
-      - Remove untagged container images
+      - name: Remove untagged container images
         uses: camargo/delete-untagged-action@v1
         with:
           github-token: ${{ secrets.CR_PAT }}
